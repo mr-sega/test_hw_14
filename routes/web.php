@@ -41,3 +41,6 @@ Route::name('ads.')->prefix('ads')->group(function (){
 
 Route::post('/login', [App\Http\Controllers\AuthController::class,'login'])->name('login');
 Route::get('/logout', [App\Http\Controllers\AuthController::class,'logout'])->name('logout');
+
+Route::get('/login/gitlab/callback', [App\Http\Controllers\GitlabController::class, 'callback'])
+    ->middleware('guest');
